@@ -1,178 +1,719 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sheikh Abdul Aziz Bin Abdulla Al Mualla Legal Consultancy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Legal Decision Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            padding: 0;
+            color: #1a202c;
+        }
+
+        .top-bar {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            padding: 4px 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .hero-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(49, 130, 206, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: #1a202c;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero-title .highlight {
+            color: #3182ce;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            color: #e53e3e;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: #4a5568;
+            line-height: 1.8;
+            max-width: 900px;
+            margin-bottom: 50px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3182ce, #2b6cb0);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(49, 130, 206, 0.15);
+            border-color: #3182ce;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2d3748;
+            line-height: 1.4;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            border-left: 5px solid #3182ce;
+            color: #1a365d;
+            padding: 35px;
+            border-radius: 15px;
+            margin: 60px 0;
+            font-size: 17px;
+            line-height: 1.8;
+            box-shadow: 0 4px 20px rgba(49, 130, 206, 0.1);
+        }
+
+        .main-content {
+            padding: 80px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .content-section {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 40px;
+            color: #1a202c;
+            margin-bottom: 30px;
+            font-weight: 800;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title .highlight-text {
+            color: #3182ce;
+        }
+
+        .section-description {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-size: 17px;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .problem-item {
+            background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+            color: white;
+            padding: 25px 35px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            font-size: 19px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.2);
+        }
+
+        .problem-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 25px rgba(49, 130, 206, 0.3);
+        }
+
+        .consequences-title {
+            color: #2d3748;
+            font-size: 26px;
+            margin: 50px 0 30px;
+            font-weight: 700;
+        }
+
+        .consequences-list {
+            list-style: none;
+        }
+
+        .consequence-item {
+            display: flex;
+            align-items: center;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            background: #f7fafc;
+            border-radius: 12px;
+            border-left: 4px solid #3182ce;
+            transition: all 0.3s ease;
+            font-size: 17px;
+            color: #2d3748;
+        }
+
+        .consequence-item:hover {
+            background: #edf2f7;
+            transform: translateX(5px);
+        }
+
+        .consequence-item::before {
+            content: '⚠️';
+            font-size: 22px;
+            margin-right: 15px;
+        }
+
+        .form-section {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-title {
+            font-size: 36px;
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .form-subtitle {
+            color: #718096;
+            margin-bottom: 40px;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            display: block;
+            color: #2d3748;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background: white;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #3182ce;
+            box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.1);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 35px;
+            margin-top: 12px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 16px;
+        }
+
+        .radio-label input[type="radio"] {
+            margin-right: 10px;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            accent-color: #3182ce;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(49, 130, 206, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .disclaimer {
+            text-align: center;
+            color: #718096;
+            font-size: 14px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .services-section {
+            padding: 100px 0;
+            background: #f7fafc;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 45px;
+            border-radius: 20px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            border-color: #3182ce;
+            box-shadow: 0 15px 50px rgba(49, 130, 206, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 56px;
+            margin-bottom: 25px;
+        }
+
+        .service-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a202c;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+            color: #4a5568;
+        }
+
+        .service-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .exclusion-section {
+            background: #fff5f5;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 50px;
+            border-left: 5px solid #e53e3e;
+        }
+
+        .exclusion-title {
+            color: #c53030;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .exclusion-list {
+            list-style: none;
+            color: #742a2a;
+        }
+
+        .exclusion-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 17px;
+        }
+
+        .exclusion-list li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #e53e3e;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #718096;
+            padding: 50px 0;
+            background: #1a202c;
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero-section,
+            .content-section,
+            .form-section {
+                padding: 40px 30px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .features-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Top Section -->
-    <section class="hero-section">
+    <div class="top-bar"></div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1>
-                        Before you sign — review the worst-case outcome.
-                        <span class="highlight">Before you sign</span>
-                    </h1>
-                    <p class="subtitle">Serious legal decisions don't come from quick advice. One wrong clause can stop everything.</p>
-                    <p class="description">Decision review for sensitive agreements, high-stakes partnerships, and consequential commitments.</p>
-                    <ul class="bullet-list">
-                        <li>Signing is close.</li>
-                        <li>The value is material.</li>
-                        <li>Reputation or exposure is on the line.</li>
-                    </ul>
-                    <p class="disclaimer">We don't handle general inquiries or quick questions.</p>
-                </div>
-                <div class="hero-form">
-                    <div class="form-container">
-                        <h2>Request a confidential decision review</h2>
-                        <p class="form-subtitle">For serious files only. If your decision is significant, submit the details below.</p>
-                        <form id="consultationForm">
-                            <div class="form-group">
-                                <label for="decisionType">Decision Type *</label>
-                                <select id="decisionType" name="decisionType" required>
-                                    <option value="">Select decision type</option>
-                                    <option value="potential-dispute">Potential Dispute</option>
-                                    <option value="contract-review">Contract Review</option>
-                                    <option value="partnership">Partnership</option>
-                                    <option value="high-stakes">High-Stakes Decision</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Is signing imminent? *</label>
-                                <div class="radio-group">
-                                    <label class="radio-label">
-                                        <input type="radio" name="signingImminent" value="yes" required>
-                                        <span>Yes</span>
-                                    </label>
-                                    <label class="radio-label">
-                                        <input type="radio" name="signingImminent" value="no" required>
-                                        <span>No</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="phoneNumber">Phone Number *</label>
-                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+971 XX XXX XXXX" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactChannel">Preferred contact channel *</label>
-                                <select id="contactChannel" name="contactChannel" required>
-                                    <option value="">Select contact channel</option>
-                                    <option value="whatsapp">WhatsApp</option>
-                                    <option value="email">Email</option>
-                                    <option value="phone">Phone</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="submit-btn">Request Legal Consultant Expert</button>
-                            <p class="form-disclaimer">Submissions are screened. We respond only to qualifying matters.</p>
-                        </form>
+                <h1 class="hero-title">
+                    <span class="highlight">Before you sign</span> — review the worst-case outcome.
+                </h1>
+                <p class="hero-subtitle">Serious legal decisions don't come from quick advice.</p>
+                <p class="hero-description">
+                    One wrong clause can stop everything. Decision review for sensitive agreements, high-stakes partnerships, and consequential commitments.
+                </p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <div class="feature-title">Signing is close.</div>
                     </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-title">The value is material.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚖️</div>
+                        <div class="feature-title">Reputation or exposure is on the line.</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <strong>Important Note:</strong> We don't handle general inquiries or quick questions. Our service is dedicated to serious decisions that require deep analysis and careful consideration.
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Middle Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="content-grid">
-                <div class="content-text">
-                    <h2>
-                        Most legal problems begin before court — at the decision.
-                        <span class="highlight">Most legal problems</span>
-                    </h2>
-                    <p>Legal problems don't start in litigation. They start at commitment. The moment a signature is placed, a partnership is formed, or a consultation is delayed, risk takes shape.</p>
-                    <div class="examples">
-                        <span class="example-item">A signature.</span>
-                        <span class="example-item">A partnership.</span>
-                        <span class="example-item">A delayed consultation.</span>
-                    </div>
-                    <h3>Each decision point carries potential consequences:</h3>
-                    <ul class="consequences-list">
-                        <li>Disputes</li>
-                        <li>Travel restrictions</li>
-                        <li>Asset freezes</li>
-                        <li>Commercial litigation</li>
-                    </ul>
+    <!-- Main Content Grid -->
+    <div class="main-content">
+        <div class="container" style="display: contents;">
+            <!-- Problems Section -->
+            <div class="content-section">
+                <h2 class="section-title">
+                    <span class="highlight-text">Most legal problems begin</span> before court — at the decision.
+                </h2>
+                <p class="section-description">
+                    Legal problems don't start in litigation. They start at commitment. The moment a signature is placed, a partnership is formed, or a consultation is delayed, risk takes shape.
+                </p>
+
+                <ul class="problem-list">
+                    <li class="problem-item">A signature.</li>
+                    <li class="problem-item">A partnership.</li>
+                    <li class="problem-item">A delayed consultation.</li>
+                </ul>
+
+                <h3 class="consequences-title">
+                    Each decision point carries potential consequences:
+                </h3>
+
+                <ul class="consequences-list">
+                    <li class="consequence-item">Disputes</li>
+                    <li class="consequence-item">Travel restrictions</li>
+                    <li class="consequence-item">Asset freezes</li>
+                    <li class="consequence-item">Commercial litigation</li>
+                </ul>
+
+                <div class="info-box" style="margin-top: 50px;">
+                    <strong>Prevention over disputes. Clarity over optimism. Responsibility over guesswork.</strong><br><br>
+                    If your decision carries material weight, it deserves measured review before you commit.
                 </div>
-                <div class="content-cards">
-                    <div class="card visual-card">
-                        <div class="visual-placeholder">
-                            <div class="gold-square">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
-                                    <path d="M20 6L9 17l-5-5"/>
-                                </svg>
-                            </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-section">
+                <h2 class="form-title">Request a confidential decision review</h2>
+                <p class="form-subtitle">For serious filings only. If your decision is significant, submit the details below.</p>
+
+                <form id="legalForm">
+                    <div class="form-group">
+                        <label class="form-label">Decision Type *</label>
+                        <select class="form-select" required>
+                            <option value="">Select decision type</option>
+                            <option value="dispute">Potential Dispute</option>
+                            <option value="contract">Contract Review</option>
+                            <option value="partnership">Business Partnership</option>
+                            <option value="investment">Investment Decision</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Is signing imminent? *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="imminent" value="yes" required>
+                                Yes
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="imminent" value="no" required>
+                                No
+                            </label>
                         </div>
-                        <p>VISUAL PLACEHOLDER</p>
-                        <p class="small-text">Replace with your brand visual</p>
                     </div>
-                    <div class="card services-card">
-                        <h3>Built for consequential decisions</h3>
-                        <ul class="services-list">
-                            <li>
-                                <span class="check-icon">✓</span>
-                                High-value contracts and deals
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                Partnership structuring
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                Pre-dispute risk review
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                Reputation-sensitive matters
-                            </li>
-                        </ul>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number *</label>
+                        <input type="tel" class="form-input" placeholder="+971 XX XXX XXXX" required>
                     </div>
-                    <div class="card exclusions-card">
-                        <h3>Not for:</h3>
-                        <ul class="exclusions-list">
-                            <li>
-                                <span class="x-icon">✗</span>
-                                Free consultations
-                            </li>
-                            <li>
-                                <span class="x-icon">✗</span>
-                                Quick opinions
-                            </li>
-                            <li>
-                                <span class="x-icon">✗</span>
-                                Low-stakes questions
-                            </li>
-                        </ul>
+
+                    <div class="form-group">
+                        <label class="form-label">Preferred contact channel *</label>
+                        <select class="form-select" required>
+                            <option value="">Select channel</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="phone">Phone Call</option>
+                            <option value="email">Email</option>
+                        </select>
                     </div>
+
+                    <button type="submit" class="submit-btn">Request Legal Consultant Expert</button>
+                    
+                    <p class="disclaimer">
+                        Submissions are screened. We respond only to qualifying matters.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-section">
+        <div class="container">
+            <h2 class="section-title">
+                Built for <span class="highlight-text">consequential decisions</span>
+            </h2>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3 class="service-title">High-value contracts & deals</h3>
+                    <ul class="service-list">
+                        <li>Commercial contracts</li>
+                        <li>Partnership agreements</li>
+                        <li>Acquisition deals</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3 class="service-title">Partnership structuring</h3>
+                    <ul class="service-list">
+                        <li>Business partnerships</li>
+                        <li>Joint ventures</li>
+                        <li>Shareholder agreements</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3 class="service-title">Pre-dispute risk review</h3>
+                    <ul class="service-list">
+                        <li>Legal risk analysis</li>
+                        <li>Mitigation strategies</li>
+                        <li>Reputation-sensitive matters</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Bottom Section -->
-    <section class="philosophy-section">
-        <div class="container">
-            <p class="philosophy-text">This is not "advice" in the conventional sense. It's scenario thinking. We map the best case, the worst case, and what sits between. We identify the points where commitment becomes exposure, and clarity becomes protection.</p>
-            <div class="highlight-box">
-                <p>Prevention over disputes. Clarity over optimism. Responsibility over guesswork. If your decision carries material weight, it deserves measured review before you commit.</p>
+            <div class="exclusion-section">
+                <h3 class="exclusion-title">Not for:</h3>
+                <ul class="exclusion-list">
+                    <li>Free consultations</li>
+                    <li>Quick opinions</li>
+                    <li>Low-stakes questions</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Sheikh Abdul Aziz Bin Abdulla Al Mualla Legal Consultancy FZC LLC</p>
-        </div>
-    </footer>
+    <div class="footer">
+        © 2026 Sheikh Abdul Aziz Bin Abdulla Al Mualla Legal Consultancy FZC LLC
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Form submission handler
+        document.getElementById('legalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = this.querySelector('.submit-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Submitting...';
+            btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
+            
+            setTimeout(() => {
+                btn.textContent = '✓ Submitted Successfully';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = 'linear-gradient(135deg, #3182ce 0%, #2c5282 100%)';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Smooth scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .problem-item, .consequence-item, .service-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
