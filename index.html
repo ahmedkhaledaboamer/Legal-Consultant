@@ -6,179 +6,222 @@
     <title>Sheikh Abdul Aziz Bin Abdulla Al Mualla Legal Consultancy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        'gold': {
-                            'primary': '#d4af37',
-                            'dark': '#b8941f',
-                            'light': '#f5e6c8',
+                        'orange': {
+                            'primary': '#ff6b35',
+                            'dark': '#e55a2b',
+                            'light': '#ff8c5a',
+                        },
+                        'brown': {
+                            'primary': '#8b4513',
+                            'dark': '#654321',
+                            'light': '#a0522d',
                         }
                     },
                     fontFamily: {
-                        'playfair': ['Playfair Display', 'serif'],
                         'inter': ['Inter', 'sans-serif'],
                     },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes rotateCW {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes rotateCCW {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+        }
+    </style>
 </head>
-<body class="font-inter antialiased bg-white text-[#1a1a1a] scroll-smooth">
+<body class="font-inter antialiased bg-white dark:bg-black text-[#1a1a1a] dark:text-white transition-colors duration-300 scroll-smooth">
+    <!-- Preloader -->
+    <div id="preloader" style="position:fixed;inset:0;z-index:9999;display:flex;justify-content:center;align-items:center;background-color:#fff;" class="dark:!bg-black">
+        <div style="position:relative;width:256px;height:256px;display:flex;justify-content:center;align-items:center;">
+
+            <!-- Circle 1 -->
+            <svg style="position:absolute;inset:0;width:100%;height:100%;animation:rotateCW 3s linear infinite;" viewBox="0 0 200 200">
+                <defs>
+                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#bd9823" stop-opacity="1"/>
+                        <stop offset="100%" stop-color="#bd9823" stop-opacity="0.3"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="80" stroke="url(#gradient1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="20 200" fill="none" opacity="0.8"/>
+            </svg>
+
+            <!-- Circle 2 -->
+            <svg style="position:absolute;inset:0;width:100%;height:100%;animation:rotateCCW 4s linear infinite;" viewBox="0 0 200 200">
+                <defs>
+                    <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#bd9823" stop-opacity="1"/>
+                        <stop offset="100%" stop-color="#bd9823" stop-opacity="0.2"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="90" stroke="url(#gradient2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="30 180" fill="none" opacity="0.6"/>
+            </svg>
+
+            <!-- Logo -->
+            <div style="position:relative;z-index:10;width:150px;height:150px;display:flex;justify-content:center;align-items:center;animation:pulse 2s ease-in-out infinite;">
+                <img src="./images/logo.webp" 
+                     alt="Logo" 
+                     style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 20px rgba(189,152,35,0.3));">
+            </div>
+
+            <!-- Glow effect -->
+            <div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle, #ceb361 0%, transparent 70%);animation:pulseGlow 2s ease-in-out infinite;"></div>
+
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-[#0a0a0a] border-b-2 border-gold-primary shadow-xl backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-5">
-                <div class="flex items-center gap-4 group cursor-pointer">
-                    <div class="w-10 h-10 bg-gold-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg group-hover:shadow-gold-primary/50">
-                        <i class="fas fa-balance-scale text-[#0a0a0a] text-xl"></i>
-                    </div>
-                    <div class="text-xl font-playfair text-gold-primary tracking-wider uppercase font-bold group-hover:text-gold-light transition-colors duration-300">
-                        MUALLA LEGAL
-                    </div>
+    <nav class="sticky top-0 z-50 bg-white dark:bg-black border-b border-[#e0e0e0] dark:border-[#333]">
+        <div class="w-full px-6 lg:px-12">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-lg font-bold text-[#1a1a1a] dark:text-white uppercase tracking-wider">
+                    MUALLA LEGAL
                 </div>
-                <button class="bg-gradient-to-br from-gold-primary via-gold-primary to-gold-dark text-[#0a0a0a] px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:from-gold-light hover:to-gold-primary group">
-                    <i class="fas fa-crown transform group-hover:rotate-12 transition-transform duration-300"></i>
-                    <span>EXCLUSIVE</span>
+                <button id="themeToggle" class="w-12 h-12 rounded-full bg-[#f5f5f5] dark:bg-[#1a1a1a] flex items-center justify-center hover:bg-[#e0e0e0] dark:hover:bg-[#2a2a2a] transition-colors duration-300">
+                    <i class="fas fa-moon text-[#1a1a1a] dark:text-white" id="themeIcon"></i>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Top Section: Text Left + Form Right -->
-    <section class="py-24 lg:py-32 bg-gradient-to-b from-white to-[#fafafa]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <section class="py-16 lg:py-24 bg-white dark:bg-black w-full">
+        <div class="w-full px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                 <!-- Left: Main Heading and Introduction -->
-                <div class="space-y-7 animate-slide-up">
-                    <h1 class="font-playfair text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight">
-                        <span class="text-gold-primary drop-shadow-lg">Before you sign</span> — review the worst-case outcome.
+                <div class="space-y-6">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-brown-primary dark:text-white">
+                        Before you sign — review the <span class="text-orange-primary">worst-case outcome</span>.
                     </h1>
                     
-                    <p class="text-xl text-[#333] font-semibold leading-relaxed">
-                        Serious legal decisions don't come from quick advice. One wrong clause can stop everything.
+                    <div class="flex items-start gap-3">
+                        <div class="w-1 h-16 bg-orange-primary mt-1"></div>
+                        <p class="text-xl text-[#555] dark:text-[#aaa] font-medium leading-relaxed">
+                            Serious legal decisions don't come from quick advice.
+                        </p>
+                    </div>
+                    
+                    <p class="text-base text-[#666] dark:text-[#999] leading-relaxed">
+                        One wrong clause can stop everything. Decision review for sensitive agreements, high-stakes partnerships, and consequential commitments.
                     </p>
                     
-                    <p class="text-base text-[#555] leading-relaxed font-medium">
-                        Decision review for sensitive agreements, high-stakes partnerships, and consequential commitments.
-                    </p>
+                    <!-- Images -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+                        <div class="rounded-lg h-[200px] sm:h-[250px] lg:h-[400px] overflow-hidden">
+                            <img src="./images/S4.webp" alt="Office meeting" class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-lg h-[300px] sm:h-[250px] lg:h-[400px] overflow-hidden">
+                            <img src="./images/S2.webp" alt="Business building" class="w-full h-full object-cover">
+                        </div>
+                    </div>
                     
-                    <ul class="space-y-4 mt-10">
-                        <li class="flex items-center gap-4 text-base text-[#333] font-medium group cursor-pointer">
-                            <span class="w-3 h-3 bg-gold-primary rounded-full shadow-md group-hover:scale-150 group-hover:shadow-gold-primary/50 transition-all duration-300"></span>
-                            <span class="group-hover:text-gold-primary transition-colors duration-300">Signing is close.</span>
-                        </li>
-                        <li class="flex items-center gap-4 text-base text-[#333] font-medium group cursor-pointer">
-                            <span class="w-3 h-3 bg-gold-primary rounded-full shadow-md group-hover:scale-150 group-hover:shadow-gold-primary/50 transition-all duration-300"></span>
-                            <span class="group-hover:text-gold-primary transition-colors duration-300">The value is material.</span>
-                        </li>
-                        <li class="flex items-center gap-4 text-base text-[#333] font-medium group cursor-pointer">
-                            <span class="w-3 h-3 bg-gold-primary rounded-full shadow-md group-hover:scale-150 group-hover:shadow-gold-primary/50 transition-all duration-300"></span>
-                            <span class="group-hover:text-gold-primary transition-colors duration-300">Reputation or exposure is on the line.</span>
-                        </li>
-                    </ul>
-                    
-                    <p class="text-sm text-[#777] mt-10 italic font-medium border-l-4 border-gold-primary pl-4 bg-gold-light/30 py-2 rounded-r-lg">
-                        We don't handle general inquiries or quick questions.
-                    </p>
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-3">
+                        <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded">
+                            <span class="text-orange-primary font-semibold text-sm">Signing is close</span>
+                        </div>
+                        <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded">
+                            <span class="text-orange-primary font-semibold text-sm">Material value</span>
+                        </div>
+                        <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded">
+                            <span class="text-orange-primary font-semibold text-sm">Reputation at risk</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right: Form -->
-                <div class="bg-gradient-to-br from-[#f8f6f0] to-white rounded-2xl p-10 border-2 border-gold-primary/20 shadow-xl hover:shadow-2xl hover:border-gold-primary/40 transition-all duration-500 group">
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-primary via-gold-dark to-gold-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-t-2xl"></div>
-                    
-                    <h2 class="text-2xl font-bold text-[#1a1a1a] mb-3 group-hover:text-gold-primary transition-colors duration-300">Request a confidential decision review</h2>
-                    <p class="text-sm text-[#555] mb-8 font-medium">
+                <div class="bg-[#f5f5f5] dark:bg-[#0a0a0a] rounded-xl p-8 lg:p-10 border-2 border-orange-primary/30 dark:border-orange-primary/20">
+                    <h2 class="text-2xl font-bold text-[#1a1a1a] dark:text-white mb-2">
+                        Request a <span class="text-orange-primary">Confidential Review</span>
+                    </h2>
+                    <p class="text-sm text-[#666] dark:text-[#aaa] mb-8">
                         For serious files only. If your decision is significant, submit the details below.
                     </p>
                     
                     <form id="legalForm" class="space-y-6">
-                        <div class="group">
-                            <label class="block text-sm font-bold text-[#1a1a1a] mb-3 group-hover:text-gold-primary transition-colors duration-300">
-                                Decision Type <span class="text-gold-primary">*</span>
+                        <div>
+                            <label class="block text-xs font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-3">
+                                Decision Type <span class="text-orange-primary">*</span>
                             </label>
                             <div class="relative">
-                                <select required class="w-full px-5 py-4 border-2 border-[#ddd] rounded-xl text-base bg-white text-[#1a1a1a] focus:outline-none focus:border-gold-primary focus:ring-4 focus:ring-gold-primary/20 transition-all duration-300 appearance-none cursor-pointer hover:border-gold-primary/50 font-medium">
+                                <select required class="w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-base text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary appearance-none cursor-pointer">
                                     <option value="">Select decision type</option>
                                     <option value="dispute">Potential Dispute</option>
                                     <option value="contract">Contract Review</option>
                                     <option value="partnership">Business Partnership</option>
                                     <option value="investment">Investment Decision</option>
                                 </select>
-                                <i class="fas fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 text-gold-primary pointer-events-none"></i>
+                                <i class="fas fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 text-orange-primary pointer-events-none"></i>
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-bold text-[#1a1a1a] mb-3">
-                                Is signing imminent? <span class="text-gold-primary">*</span>
+                            <label class="block text-xs font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-3">
+                                Is signing imminent? <span class="text-orange-primary">*</span>
                             </label>
-                            <div class="flex gap-8">
-                                <label class="flex items-center gap-3 cursor-pointer group/radio">
-                                    <input type="radio" name="imminent" value="yes" required class="w-5 h-5 accent-gold-primary cursor-pointer">
-                                    <span class="text-[#1a1a1a] font-medium group-hover/radio:text-gold-primary transition-colors duration-300">Yes</span>
+                            <div class="flex gap-6">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="imminent" value="yes" required class="w-5 h-5 accent-orange-primary cursor-pointer">
+                                    <span class="text-[#1a1a1a] dark:text-white">Yes</span>
                                 </label>
-                                <label class="flex items-center gap-3 cursor-pointer group/radio">
-                                    <input type="radio" name="imminent" value="no" required class="w-5 h-5 accent-gold-primary cursor-pointer">
-                                    <span class="text-[#1a1a1a] font-medium group-hover/radio:text-gold-primary transition-colors duration-300">No</span>
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="imminent" value="no" required class="w-5 h-5 accent-orange-primary cursor-pointer">
+                                    <span class="text-[#1a1a1a] dark:text-white">No</span>
                                 </label>
                             </div>
                         </div>
 
-                        <div class="group">
-                            <label class="block text-sm font-bold text-[#1a1a1a] mb-3 group-hover:text-gold-primary transition-colors duration-300">
-                                Phone Number <span class="text-gold-primary">*</span>
+                        <div>
+                            <label class="block text-xs font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-3">
+                                Phone Number <span class="text-orange-primary">*</span>
                             </label>
-                            <input type="tel" placeholder="+971 XX XXX XXXX" required class="w-full px-5 py-4 border-2 border-[#ddd] rounded-xl text-base bg-white text-[#1a1a1a] focus:outline-none focus:border-gold-primary focus:ring-4 focus:ring-gold-primary/20 transition-all duration-300 placeholder:text-[#999] hover:border-gold-primary/50 font-medium">
+                            <input type="tel" placeholder="+971 XX XXX XXXX" required class="w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-base text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary placeholder:text-[#999] dark:placeholder:text-[#666]">
                         </div>
 
-                        <div class="group">
-                            <label class="block text-sm font-bold text-[#1a1a1a] mb-3 group-hover:text-gold-primary transition-colors duration-300">
-                                Preferred contact channel <span class="text-gold-primary">*</span>
+                        <div>
+                            <label class="block text-xs font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-3">
+                                Preferred contact channel <span class="text-orange-primary">*</span>
                             </label>
                             <div class="relative">
-                                <select required class="w-full px-5 py-4 border-2 border-[#ddd] rounded-xl text-base bg-white text-[#1a1a1a] focus:outline-none focus:border-gold-primary focus:ring-4 focus:ring-gold-primary/20 transition-all duration-300 appearance-none cursor-pointer hover:border-gold-primary/50 font-medium">
+                                <select required class="w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-base text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary appearance-none cursor-pointer">
                                     <option value="">Select contact channel</option>
                                     <option value="whatsapp">WhatsApp</option>
                                     <option value="phone">Phone Call</option>
                                     <option value="email">Email</option>
                                 </select>
-                                <i class="fas fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 text-gold-primary pointer-events-none"></i>
+                                <i class="fas fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 text-orange-primary pointer-events-none"></i>
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full py-5 bg-gradient-to-r from-gold-primary via-gold-primary to-gold-dark text-white rounded-xl font-bold text-base hover:from-gold-dark hover:to-gold-primary hover:scale-105 hover:shadow-2xl transition-all duration-300 shadow-xl mt-4 relative overflow-hidden group/btn">
-                            <span class="relative z-10 flex items-center justify-center gap-2">
-                                <i class="fas fa-paper-plane transform group-hover/btn:translate-x-1 transition-transform duration-300"></i>
-                                Request Legal Consultant Expert
-                            </span>
-                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
+                        <button type="submit" class="w-full py-4 bg-orange-primary text-white rounded-lg font-bold text-base hover:bg-orange-dark transition-colors duration-300 mt-2 uppercase tracking-wider">
+                            Request Expert Consultation
                         </button>
                         
-                        <p class="text-xs text-[#777] text-center mt-5 font-medium">
-                            <i class="fas fa-lock text-gold-primary mr-1"></i>
-                            Submissions are screened. We respond only to qualifying matters.
+                        <p class="text-xs text-[#666] dark:text-[#999] text-center mt-4 uppercase tracking-wider">
+                            Submitting any documents or information does not constitute an attorney-client relationship.
                         </p>
                     </form>
                 </div>
@@ -186,260 +229,241 @@
         </div>
     </section>
 
-    <!-- Middle Section: Text Left + Cards Right -->
-    <section class="py-20 lg:py-28 bg-gradient-to-b from-[#fafafa] to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <!-- Services Section: Three Cards -->
+    <section class="py-16 lg:py-24 bg-white dark:bg-black w-full">
+        <div class="w-full px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Expert Consultation -->
+                <div class="bg-white dark:bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="h-[200px] sm:h-[250px] lg:h-[400px] overflow-hidden">
+                        <img src="./images/S5.webp" alt="Expert Consultation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2">Expert Consultation</h3>
+                        <p class="text-sm text-[#666] dark:text-[#999]">Direct access to senior legal counsel</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Document Review -->
+                <div class="bg-white dark:bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="h-[200px] sm:h-[250px] lg:h-[400px] overflow-hidden">
+                        <img src="./images/S7.webp" alt="Document Review" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2">Document Review</h3>
+                        <p class="text-sm text-[#666] dark:text-[#999]">Thorough analysis of every clause</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Strategic Planning -->
+                <div class="bg-white dark:bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="h-[200px] sm:h-[250px] lg:h-[400px] overflow-hidden">
+                        <img src="./images/S6.webp" alt="Strategic Planning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#1a1a1a] dark:text-white mb-2">Strategic Planning</h3>
+                        <p class="text-sm text-[#666] dark:text-[#999]">Mapping outcomes before commitment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lower Section: Text Left + Image Right -->
+    <section class="py-16 lg:py-24 bg-white dark:bg-black w-full">
+        <div class="w-full px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                 <!-- Left: Content Text -->
-                <div class="space-y-7">
-                    <h2 class="font-playfair text-5xl sm:text-6xl font-extrabold leading-tight">
-                        <span class="text-gold-primary drop-shadow-lg">Most legal problems</span> begin before court — at the decision.
+                <div class="space-y-8">
+                    <h2 class="text-4xl sm:text-5xl font-bold leading-tight text-brown-primary dark:text-white">
+                        Most legal problems <span class="text-orange-primary">begin</span> before court — at the decision.
                     </h2>
                     
-                    <p class="text-base text-[#555] leading-relaxed font-medium">
+                    <p class="text-base text-[#666] dark:text-[#999] leading-relaxed">
                         Legal problems don't start in litigation. They start at commitment. The moment a signature is placed, a partnership is formed, or a consultation is delayed, risk takes shape.
                     </p>
                     
-                    <div class="flex flex-wrap gap-4 my-8">
-                        <span class="text-gold-primary font-bold text-lg px-4 py-2 bg-gold-light/40 rounded-lg hover:bg-gold-primary hover:text-white transition-all duration-300 cursor-pointer hover:scale-105 shadow-md hover:shadow-lg">A signature.</span>
-                        <span class="text-gold-primary font-bold text-lg px-4 py-2 bg-gold-light/40 rounded-lg hover:bg-gold-primary hover:text-white transition-all duration-300 cursor-pointer hover:scale-105 shadow-md hover:shadow-lg">A partnership.</span>
-                        <span class="text-gold-primary font-bold text-lg px-4 py-2 bg-gold-light/40 rounded-lg hover:bg-gold-primary hover:text-white transition-all duration-300 cursor-pointer hover:scale-105 shadow-md hover:shadow-lg">A delayed consultation.</span>
+                    <!-- Decision Points Cards -->
+                    <div class="grid grid-cols-3 gap-4 my-8">
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] text-center">
+                            <i class="fas fa-pen-fancy text-3xl text-orange-primary mb-2"></i>
+                            <p class="text-sm font-semibold text-[#1a1a1a] dark:text-white">A signature.</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] text-center">
+                            <i class="fas fa-users text-3xl text-orange-primary mb-2"></i>
+                            <p class="text-sm font-semibold text-[#1a1a1a] dark:text-white">A partnership.</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] text-center">
+                            <i class="fas fa-comments text-3xl text-orange-primary mb-2"></i>
+                            <p class="text-sm font-semibold text-[#1a1a1a] dark:text-white">A consultation.</p>
+                        </div>
                     </div>
                     
-                    <h3 class="text-2xl font-bold text-[#1a1a1a] mt-10 mb-6">
+                    <p class="text-xs text-[#999] dark:text-[#666] uppercase tracking-wider mb-4">
                         Each decision point carries potential consequences:
-                    </h3>
+                    </p>
                     
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-4 text-base text-[#333] font-medium group cursor-pointer hover:translate-x-2 transition-all duration-300">
-                            <i class="fas fa-arrow-right text-gold-primary transform group-hover:translate-x-2 transition-transform duration-300"></i>
-                            <span class="group-hover:text-gold-primary transition-colors duration-300">Disputes</span>
-                        </li>
-                        <li class="flex items-center gap-4 text-base text-[#333] font-medium group cursor-pointer hover:translate-x-2 transition-all duration-300">
-                            <i class="fas fa-arrow-right text-gold-primary transform group-hover:translate-x-2 transition-transform duration-300"></i>
-                            <span class="group-hover:text-gold-primary transition-colors duration-300">Travel restrictions</span>
-                        </li>
-                        <li class="flex items-center gap-4 text-base text-[#333] font-medium group cursor-pointer hover:translate-x-2 transition-all duration-300">
-                            <i class="fas fa-arrow-right text-gold-primary transform group-hover:translate-x-2 transition-transform duration-300"></i>
-                            <span class="group-hover:text-gold-primary transition-colors duration-300">Asset freezes</span>
-                        </li>
-                        <li class="flex items-center gap-4 text-base text-[#333] font-medium group cursor-pointer hover:translate-x-2 transition-all duration-300">
-                            <i class="fas fa-arrow-right text-gold-primary transform group-hover:translate-x-2 transition-transform duration-300"></i>
-                            <span class="group-hover:text-gold-primary transition-colors duration-300">Commercial litigation</span>
-                        </li>
-                    </ul>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3">
+                            <i class="fas fa-plus text-orange-primary"></i>
+                            <span class="text-[#1a1a1a] dark:text-white font-medium">Disputes</span>
+                        </div>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3">
+                            <i class="fas fa-plus text-orange-primary"></i>
+                            <span class="text-[#1a1a1a] dark:text-white font-medium">Travel restrictions</span>
+                        </div>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3">
+                            <i class="fas fa-plus text-orange-primary"></i>
+                            <span class="text-[#1a1a1a] dark:text-white font-medium">Asset freezes</span>
+                        </div>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3">
+                            <i class="fas fa-plus text-orange-primary"></i>
+                            <span class="text-[#1a1a1a] dark:text-white font-medium">Commercial litigation</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#f5f5f5] dark:bg-[#1a1a1a] rounded-lg p-6 border-l-4 border-orange-primary mt-8">
+                        <p class="text-base text-[#1a1a1a] dark:text-white leading-relaxed">
+                            "Prevention over disputes. Clarity over optimism. Responsibility over guesswork. If your decision carries material weight, it deserves measured review before you commit."
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Right: Three Cards -->
+                <!-- Right: Strategic Protection Image + Built for Card -->
                 <div class="space-y-6">
-                    <!-- Visual Placeholder Card -->
-                    <div class="bg-gradient-to-br from-[#f8f6f0] to-white rounded-2xl p-8 border-2 border-gold-primary/20 shadow-lg hover:shadow-2xl hover:border-gold-primary/60 hover:-translate-y-2 transition-all duration-500 text-center group">
-                        <div class="w-52 h-52 flex items-center justify-center mx-auto mb-4 overflow-hidden rounded-xl group-hover:scale-105 transition-transform duration-500">
-                            <img src="./images/logo.webp" alt="signature" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <!-- Strategic Protection Card -->
+                    <div class="relative rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] group">
+                        <div class="h-[300px] sm:h-[350px] lg:h-[400px] xl:h-[500px] overflow-hidden">
+                            <img src="./images/S3.webp" alt="Strategic Protection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                         </div>
-                        <p class="text-sm font-bold text-[#555] mb-1 group-hover:text-gold-primary transition-colors duration-300">VISUAL PLACEHOLDER</p>
-                        <p class="text-xs text-[#777]">Replace with your brand visual</p>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-12 h-12 bg-orange-primary rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-clock text-white text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white">Strategic Protection</h3>
+                            </div>
+                            <p class="text-sm text-white/90">
+                                Comprehensive risk assessment for high-stakes decisions. We protect your interests before they are threatened.
+                            </p>
+                        </div>
                     </div>
 
                     <!-- Built for Card -->
-                    <div class="bg-gradient-to-br from-[#f8f6f0] to-white rounded-2xl p-8 border-2 border-gold-primary/20 shadow-lg hover:shadow-2xl hover:border-gold-primary/60 hover:-translate-y-2 transition-all duration-500 group">
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-6 group-hover:text-gold-primary transition-colors duration-300">Built for consequential decisions.</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                                <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                                <span class="group-hover/item:text-gold-primary transition-colors duration-300">High-value contracts and deals</span>
+                    <div class="bg-white dark:bg-[#0a0a0a] rounded-xl p-8 border border-[#e0e0e0] dark:border-[#333]">
+                        <h3 class="text-sm font-bold text-orange-primary mb-6 uppercase tracking-wider">
+                            Built for consequential decisions
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-base text-[#333] dark:text-[#ccc]">
+                                <i class="fas fa-check text-orange-primary mt-1"></i>
+                                <span>High-value contracts</span>
                             </li>
-                            <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                                <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                                <span class="group-hover/item:text-gold-primary transition-colors duration-300">Partnership structuring</span>
+                            <li class="flex items-start gap-3 text-base text-[#333] dark:text-[#ccc]">
+                                <i class="fas fa-check text-orange-primary mt-1"></i>
+                                <span>Partnership structuring</span>
                             </li>
-                            <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                                <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                                <span class="group-hover/item:text-gold-primary transition-colors duration-300">Pre-dispute risk review</span>
+                            <li class="flex items-start gap-3 text-base text-[#333] dark:text-[#ccc]">
+                                <i class="fas fa-check text-orange-primary mt-1"></i>
+                                <span>Pre-dispute risk review</span>
                             </li>
-                            <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                                <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                                <span class="group-hover/item:text-gold-primary transition-colors duration-300">Reputation-sensitive matters</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Not for Card -->
-                    <div class="bg-gradient-to-br from-[#f8f6f0] to-white rounded-2xl p-8 border-2 border-gold-primary/20 shadow-lg hover:shadow-2xl hover:border-gold-primary/60 hover:-translate-y-2 transition-all duration-500 group">
-                        <h3 class="text-xl font-bold text-[#1a1a1a] mb-6 group-hover:text-gold-primary transition-colors duration-300">Not for:</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                                <i class="fas fa-times text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                                <span class="group-hover/item:text-gold-primary transition-colors duration-300">Free consultations</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                                <i class="fas fa-times text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                                <span class="group-hover/item:text-gold-primary transition-colors duration-300">Quick opinions</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                                <i class="fas fa-times text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                                <span class="group-hover/item:text-gold-primary transition-colors duration-300">Low-stakes questions</span>
+                            <li class="flex items-start gap-3 text-base text-[#333] dark:text-[#ccc]">
+                                <i class="fas fa-check text-orange-primary mt-1"></i>
+                                <span>Reputation matters</span>
                             </li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bottom Section: Philosophy -->
-    <section class="py-20 lg:py-28 bg-gradient-to-b from-white to-[#fafafa]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-lg text-[#444] leading-relaxed text-center max-w-4xl mx-auto mb-14 font-medium">
-                This is not "advice" in the conventional sense. It's scenario thinking. We map the best case, the worst case, and what sits between. We identify the points where commitment becomes exposure, and clarity becomes protection.
-            </p>
-            
-            <div class="bg-gradient-to-br from-[#f8f6f0] to-white rounded-2xl p-10 lg:p-12 border-l-4 border-gold-primary max-w-5xl mx-auto shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
-                <p class="text-lg text-[#1a1a1a] leading-relaxed font-semibold">
-                    Prevention over disputes. Clarity over optimism. Responsibility over guesswork. If your decision carries material weight, it deserves measured review before you commit.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Decorative Header -->
-            <div class="flex items-center justify-center mb-20">
-                <div class="h-1 w-32 bg-gradient-to-r from-transparent via-gold-primary to-gold-primary"></div>
-                <div class="w-20 h-20 bg-gradient-to-br from-gold-primary to-gold-dark rounded-full flex items-center justify-center mx-8 shadow-2xl animate-float">
-                    <i class="fas fa-gavel text-white text-3xl"></i>
-                </div>
-                <div class="h-1 w-32 bg-gradient-to-l from-transparent via-gold-primary to-gold-primary"></div>
-            </div>
-
-            <!-- Three Service Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Card 1: High-value contracts & deals -->
-                <div class="bg-white rounded-2xl p-10 border-2 border-gold-primary/20 shadow-xl hover:shadow-2xl hover:border-gold-primary/60 hover:-translate-y-4 transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold-primary via-gold-dark to-gold-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                    <div class="w-20 h-20 bg-gradient-to-br from-gold-primary to-gold-dark rounded-xl flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                        <i class="fas fa-file-contract text-white text-3xl"></i>
-                    </div>
-                    <h3 class="font-playfair text-2xl font-bold text-[#1a1a1a] mb-8 group-hover:text-gold-primary transition-colors duration-300">High-value contracts</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                            <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                            <span class="group-hover/item:text-gold-primary transition-colors duration-300">Commercial contracts</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                            <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                            <span class="group-hover/item:text-gold-primary transition-colors duration-300">Partnership agreements</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                            <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                            <span class="group-hover/item:text-gold-primary transition-colors duration-300">Acquisition deals</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Card 2: Partnership structuring -->
-                <div class="bg-white rounded-2xl p-10 border-2 border-gold-primary/20 shadow-xl hover:shadow-2xl hover:border-gold-primary/60 hover:-translate-y-4 transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold-primary via-gold-dark to-gold-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                    <div class="w-20 h-20 bg-gradient-to-br from-gold-primary to-gold-dark rounded-xl flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                        <i class="fas fa-handshake text-white text-3xl"></i>
-                    </div>
-                    <h3 class="font-playfair text-2xl font-bold text-[#1a1a1a] mb-8 group-hover:text-gold-primary transition-colors duration-300">Partnership structuring</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                            <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                            <span class="group-hover/item:text-gold-primary transition-colors duration-300">Business partnerships</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                            <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                            <span class="group-hover/item:text-gold-primary transition-colors duration-300">Joint ventures</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                            <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                            <span class="group-hover/item:text-gold-primary transition-colors duration-300">Shareholder agreements</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Card 3: Pre-dispute risk review -->
-                <div class="bg-white rounded-2xl p-10 border-2 border-gold-primary/20 shadow-xl hover:shadow-2xl hover:border-gold-primary/60 hover:-translate-y-4 transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold-primary via-gold-dark to-gold-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                    <div class="w-20 h-20 bg-gradient-to-br from-gold-primary to-gold-dark rounded-xl flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                        <i class="fas fa-shield-alt text-white text-3xl"></i>
-                    </div>
-                    <h3 class="font-playfair text-2xl font-bold text-[#1a1a1a] mb-8 group-hover:text-gold-primary transition-colors duration-300">Pre-dispute risk review</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                            <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                            <span class="group-hover/item:text-gold-primary transition-colors duration-300">Legal risk analysis</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                            <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                            <span class="group-hover/item:text-gold-primary transition-colors duration-300">Mitigation strategies</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-base text-[#333] font-medium group/item">
-                            <i class="fas fa-check text-gold-primary mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
-                            <span class="group-hover/item:text-gold-primary transition-colors duration-300">Reputation-sensitive matters</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 bg-gradient-to-b from-white to-[#fafafa] border-t-2 border-gold-primary/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm text-[#777] font-medium">
-                © 2026 Sheikh Abdul Aziz Bin Abdulla Al Mualla Legal Consultancy FZC LLC
-            </p>
+    <footer class="py-8 bg-white dark:bg-black border-t border-[#e0e0e0] dark:border-[#333] w-full">
+        <div class="w-full px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-[#999] dark:text-[#666] uppercase tracking-wider">
+                    © 2024 Sheikh Abdullah Aziz Bin Abdulla Al Mualla Legal Consultancy FZC LLC
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-xs text-[#999] dark:text-[#666] uppercase tracking-wider hover:text-orange-primary transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-xs text-[#999] dark:text-[#666] uppercase tracking-wider hover:text-orange-primary transition-colors duration-300">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
     <script>
+        // Theme Toggle - Set before page loads
+        const html = document.documentElement;
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        const preloader = document.getElementById('preloader');
+        
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+            if (preloader) {
+                preloader.style.backgroundColor = '#000';
+            }
+        } else {
+            html.classList.remove('dark');
+            if (preloader) {
+                preloader.style.backgroundColor = '#fff';
+            }
+        }
+
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (preloader) {
+                    preloader.style.transition = 'opacity 0.6s ease-in-out';
+                    preloader.style.opacity = '0';
+                    setTimeout(() => preloader.style.display = 'none', 600);
+                }
+            }, 500);
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        if (currentTheme === 'dark') {
+            themeIcon.className = 'fas fa-sun text-white';
+        } else {
+            themeIcon.className = 'fas fa-moon text-[#1a1a1a]';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            
+            if (isDark) {
+                themeIcon.className = 'fas fa-sun text-white';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.className = 'fas fa-moon text-[#1a1a1a]';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
         // Form submission
         document.getElementById('legalForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const btn = this.querySelector('button[type="submit"]');
-            const originalHTML = btn.innerHTML;
+            const originalText = btn.textContent;
             
-            btn.innerHTML = '<span class="relative z-10 flex items-center justify-center gap-2"><i class="fas fa-spinner fa-spin"></i> Processing...</span>';
-            btn.style.background = 'linear-gradient(to right, #48bb78, #38a169)';
+            btn.textContent = 'Processing...';
+            btn.style.background = '#48bb78';
             
             setTimeout(() => {
-                btn.innerHTML = '<span class="relative z-10 flex items-center justify-center gap-2"><i class="fas fa-check-circle"></i> Submitted Successfully</span>';
+                btn.textContent = '✓ Submitted Successfully';
                 setTimeout(() => {
-                    btn.innerHTML = originalHTML;
+                    btn.textContent = originalText;
                     btn.style.background = '';
                     this.reset();
                 }, 2000);
             }, 1500);
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Animate cards on scroll
-        document.querySelectorAll('.bg-white.rounded-2xl, .bg-gradient-to-br').forEach((el, index) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
-            observer.observe(el);
         });
     </script>
 </body>
