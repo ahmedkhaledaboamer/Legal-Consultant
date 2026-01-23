@@ -107,7 +107,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-gradient-to-r from-orange-primary/10 via-orange-primary/5 to-orange-primary/10 dark:from-orange-primary/20 dark:via-orange-primary/10 dark:to-orange-primary/20 border-b border-orange-primary/30 dark:border-orange-primary/20 backdrop-blur-sm">
+    <nav class="sticky top-0 z-50 bg-gradient-to-r from-orange-primary/20 via-orange-primary/15 to-orange-primary/20 dark:from-orange-primary/30 dark:via-orange-primary/20 dark:to-orange-primary/30 border-b border-orange-primary/40 dark:border-orange-primary/30 backdrop-blur-sm">
         <div class="w-full px-6 lg:px-12">
             <div class="flex justify-between items-center py-4">
                 <div class="text-clamp-lg font-bold text-[#1a1a1a] dark:text-white uppercase tracking-wider">
@@ -143,30 +143,30 @@
                     
                     <!-- Images -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
-                        <div class="rounded-lg h-[200px] sm:h-[250px] lg:h-[400px] overflow-hidden">
-                            <img src="./images/S4.webp" alt="Office meeting" class="w-full h-full object-cover">
+                        <div class="rounded-lg h-[200px] sm:h-[250px] lg:h-[400px] overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                            <img src="./images/S4.webp" alt="Office meeting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                         </div>
-                        <div class="rounded-lg h-[300px] sm:h-[250px] lg:h-[400px] overflow-hidden">
-                            <img src="./images/S2.webp" alt="Business building" class="w-full h-full object-cover">
+                        <div class="rounded-lg h-[300px] sm:h-[250px] lg:h-[400px] overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                            <img src="./images/S2.webp" alt="Business building" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                         </div>
                     </div>
                     
                     <!-- Tags -->
                     <div class="flex flex-wrap gap-3">
-                        <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded">
+                        <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded hover:bg-orange-primary/20 dark:hover:bg-orange-primary/30 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer">
                             <span class="text-orange-primary font-semibold text-clamp-sm">Signing is close</span>
                         </div>
-                        <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded">
+                        <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded hover:bg-orange-primary/20 dark:hover:bg-orange-primary/30 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer">
                             <span class="text-orange-primary font-semibold text-clamp-sm">Material value</span>
                         </div>
-                        <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded">
+                        <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded hover:bg-orange-primary/20 dark:hover:bg-orange-primary/30 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer">
                             <span class="text-orange-primary font-semibold text-clamp-sm">Reputation at risk</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right: Form -->
-                <div class="bg-[#f5f5f5] dark:bg-[#0a0a0a] rounded-xl p-8 lg:p-10 border-2 border-orange-primary/30 dark:border-orange-primary/20">
+                <div id="contactForm" class="bg-[#f5f5f5] dark:bg-[#0a0a0a] rounded-xl p-8 lg:p-10 border-2 border-orange-primary/30 dark:border-orange-primary/20 hover:border-orange-primary/50 dark:hover:border-orange-primary/40 hover:shadow-xl transition-all duration-300">
                     <h2 class="text-clamp-2xl font-bold text-[#1a1a1a] dark:text-white mb-2">
                         Request a <span class="text-orange-primary">Confidential Review</span>
                     </h2>
@@ -229,7 +229,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full py-4 bg-orange-primary text-white rounded-lg font-bold text-clamp-base hover:bg-orange-dark transition-colors duration-300 mt-2 uppercase tracking-wider">
+                        <button type="submit" class="w-full py-4 bg-orange-primary text-white rounded-lg font-bold text-clamp-base hover:bg-orange-dark hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 mt-2 uppercase tracking-wider">
                             Request Expert Consultation
                         </button>
                         
@@ -247,35 +247,35 @@
         <div class="w-full px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1: Expert Consultation -->
-                <div class="bg-white dark:bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] hover:shadow-xl transition-shadow duration-300 group">
+                <div class="bg-white dark:bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] hover:shadow-xl hover:border-orange-primary hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
                     <div class="h-[200px] sm:h-[250px] lg:h-[400px] overflow-hidden">
                         <img src="./images/S5.webp" alt="Expert Consultation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-clamp-xl font-bold text-orange-primary dark:text-orange-primary mb-2">Expert Consultation</h3>
-                        <p class="text-clamp-sm text-[#666] dark:text-[#999]">Direct access to senior legal counsel</p>
+                        <h3 class="text-clamp-xl font-bold text-orange-primary dark:text-orange-primary mb-2 group-hover:text-orange-dark transition-colors duration-300">Expert Consultation</h3>
+                        <p class="text-clamp-sm text-[#666] dark:text-[#999] group-hover:text-[#333] dark:group-hover:text-[#ccc] transition-colors duration-300">Direct access to senior legal counsel</p>
                     </div>
                 </div>
 
                 <!-- Card 2: Document Review -->
-                <div class="bg-white dark:bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] hover:shadow-xl transition-shadow duration-300 group">
+                <div class="bg-white dark:bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] hover:shadow-xl hover:border-orange-primary hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
                     <div class="h-[200px] sm:h-[250px] lg:h-[400px] overflow-hidden">
                         <img src="./images/S7.webp" alt="Document Review" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-clamp-xl font-bold text-orange-primary dark:text-orange-primary mb-2">Document Review</h3>
-                        <p class="text-clamp-sm text-[#666] dark:text-[#999]">Thorough analysis of every clause</p>
+                        <h3 class="text-clamp-xl font-bold text-orange-primary dark:text-orange-primary mb-2 group-hover:text-orange-dark transition-colors duration-300">Document Review</h3>
+                        <p class="text-clamp-sm text-[#666] dark:text-[#999] group-hover:text-[#333] dark:group-hover:text-[#ccc] transition-colors duration-300">Thorough analysis of every clause</p>
                     </div>
                 </div>
 
                 <!-- Card 3: Strategic Planning -->
-                <div class="bg-white dark:bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] hover:shadow-xl transition-shadow duration-300 group">
+                <div class="bg-white dark:bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] hover:shadow-xl hover:border-orange-primary hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
                     <div class="h-[200px] sm:h-[250px] lg:h-[400px] overflow-hidden">
                         <img src="./images/S6.webp" alt="Strategic Planning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-clamp-xl font-bold text-orange-primary dark:text-orange-primary mb-2">Strategic Planning</h3>
-                        <p class="text-clamp-sm text-[#666] dark:text-[#999]">Mapping outcomes before commitment</p>
+                        <h3 class="text-clamp-xl font-bold text-orange-primary dark:text-orange-primary mb-2 group-hover:text-orange-dark transition-colors duration-300">Strategic Planning</h3>
+                        <p class="text-clamp-sm text-[#666] dark:text-[#999] group-hover:text-[#333] dark:group-hover:text-[#ccc] transition-colors duration-300">Mapping outcomes before commitment</p>
                     </div>
                 </div>
             </div>
@@ -298,44 +298,44 @@
                     
                     <!-- Decision Points Cards -->
                     <div class="grid grid-cols-3 gap-4 my-8">
-                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] text-center">
-                            <i class="fas fa-pen-fancy text-3xl text-orange-primary mb-2"></i>
-                            <p class="text-clamp-sm font-semibold text-[#1a1a1a] dark:text-white">A signature.</p>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] text-center hover:border-orange-primary hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
+                            <i class="fas fa-pen-fancy text-3xl text-orange-primary mb-2 group-hover:scale-110 transition-transform duration-300"></i>
+                            <p class="text-clamp-sm font-semibold text-[#1a1a1a] dark:text-white group-hover:text-orange-primary transition-colors duration-300">A signature.</p>
                         </div>
-                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] text-center">
-                            <i class="fas fa-users text-3xl text-orange-primary mb-2"></i>
-                            <p class="text-clamp-sm font-semibold text-[#1a1a1a] dark:text-white">A partnership.</p>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] text-center hover:border-orange-primary hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
+                            <i class="fas fa-users text-3xl text-orange-primary mb-2 group-hover:scale-110 transition-transform duration-300"></i>
+                            <p class="text-clamp-sm font-semibold text-[#1a1a1a] dark:text-white group-hover:text-orange-primary transition-colors duration-300">A partnership.</p>
                         </div>
-                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] text-center">
-                            <i class="fas fa-comments text-3xl text-orange-primary mb-2"></i>
-                            <p class="text-clamp-sm font-semibold text-[#1a1a1a] dark:text-white">A consultation.</p>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] text-center hover:border-orange-primary hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
+                            <i class="fas fa-comments text-3xl text-orange-primary mb-2 group-hover:scale-110 transition-transform duration-300"></i>
+                            <p class="text-clamp-sm font-semibold text-[#1a1a1a] dark:text-white group-hover:text-orange-primary transition-colors duration-300">A consultation.</p>
                         </div>
                     </div>
                     
-                    <p class="text-clamp-xs text-[#999] dark:text-[#666] uppercase tracking-wider mb-4">
+                    <p class="text-clamp-xs text-[#999] dark:text-[#666] uppercase tracking-wider mb-4 inline-block px-4 py-2 rounded-lg border-2 border-transparent hover:border-orange-primary transition-all duration-300 cursor-pointer">
                         Each decision point carries potential consequences:
                     </p>
                     
                     <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3">
-                            <i class="fas fa-plus text-orange-primary"></i>
-                            <span class="text-clamp-base text-[#1a1a1a] dark:text-white font-medium">Disputes</span>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3 hover:border-orange-primary hover:shadow-md hover:bg-orange-primary/5 dark:hover:bg-orange-primary/10 transition-all duration-300 cursor-pointer group">
+                            <i class="fas fa-plus text-orange-primary group-hover:rotate-90 transition-transform duration-300"></i>
+                            <span class="text-clamp-base text-[#1a1a1a] dark:text-white font-medium group-hover:text-orange-primary transition-colors duration-300">Disputes</span>
                         </div>
-                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3">
-                            <i class="fas fa-plus text-orange-primary"></i>
-                            <span class="text-clamp-base text-[#1a1a1a] dark:text-white font-medium">Travel restrictions</span>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3 hover:border-orange-primary hover:shadow-md hover:bg-orange-primary/5 dark:hover:bg-orange-primary/10 transition-all duration-300 cursor-pointer group">
+                            <i class="fas fa-plus text-orange-primary group-hover:rotate-90 transition-transform duration-300"></i>
+                            <span class="text-clamp-base text-[#1a1a1a] dark:text-white font-medium group-hover:text-orange-primary transition-colors duration-300">Travel restrictions</span>
                         </div>
-                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3">
-                            <i class="fas fa-plus text-orange-primary"></i>
-                            <span class="text-clamp-base text-[#1a1a1a] dark:text-white font-medium">Asset freezes</span>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3 hover:border-orange-primary hover:shadow-md hover:bg-orange-primary/5 dark:hover:bg-orange-primary/10 transition-all duration-300 cursor-pointer group">
+                            <i class="fas fa-plus text-orange-primary group-hover:rotate-90 transition-transform duration-300"></i>
+                            <span class="text-clamp-base text-[#1a1a1a] dark:text-white font-medium group-hover:text-orange-primary transition-colors duration-300">Asset freezes</span>
                         </div>
-                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3">
-                            <i class="fas fa-plus text-orange-primary"></i>
-                            <span class="text-clamp-base text-[#1a1a1a] dark:text-white font-medium">Commercial litigation</span>
+                        <div class="bg-white dark:bg-[#0a0a0a] rounded-lg p-4 border border-[#e0e0e0] dark:border-[#333] flex items-center gap-3 hover:border-orange-primary hover:shadow-md hover:bg-orange-primary/5 dark:hover:bg-orange-primary/10 transition-all duration-300 cursor-pointer group">
+                            <i class="fas fa-plus text-orange-primary group-hover:rotate-90 transition-transform duration-300"></i>
+                            <span class="text-clamp-base text-[#1a1a1a] dark:text-white font-medium group-hover:text-orange-primary transition-colors duration-300">Commercial litigation</span>
                         </div>
                     </div>
 
-                    <div class="bg-[#f5f5f5] dark:bg-[#1a1a1a] rounded-lg p-6 border-l-4 border-orange-primary mt-8">
+                    <div class="bg-[#f5f5f5] dark:bg-[#1a1a1a] rounded-lg p-6 border-l-4 border-orange-primary mt-8 hover:border-orange-dark hover:shadow-lg hover:bg-orange-primary/5 dark:hover:bg-orange-primary/10 transition-all duration-300 cursor-pointer">
                         <p class="text-clamp-base text-[#1a1a1a] dark:text-white leading-relaxed">
                             "Prevention over disputes. Clarity over optimism. Responsibility over guesswork. If your decision carries material weight, it deserves measured review before you commit."
                         </p>
@@ -345,7 +345,7 @@
                 <!-- Right: Strategic Protection Image + Built for Card -->
                 <div class="space-y-6">
                     <!-- Strategic Protection Card -->
-                    <div class="relative rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] group">
+                    <div class="relative rounded-xl overflow-hidden border border-[#e0e0e0] dark:border-[#333] group hover:border-orange-primary hover:shadow-xl transition-all duration-300 cursor-pointer">
                         <div class="h-[300px] sm:h-[350px] lg:h-[400px] xl:h-[500px] overflow-hidden">
                             <img src="./images/S3.webp" alt="Strategic Protection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                         </div>
@@ -363,7 +363,7 @@
                     </div>
 
                     <!-- Built for Card -->
-                    <div class="bg-white dark:bg-[#0a0a0a] rounded-xl p-8 border border-[#e0e0e0] dark:border-[#333]">
+                    <div class="bg-white dark:bg-[#0a0a0a] rounded-xl p-8 border border-[#e0e0e0] dark:border-[#333] hover:border-orange-primary hover:shadow-lg transition-all duration-300 cursor-pointer">
                         <h3 class="text-clamp-sm font-bold text-orange-primary mb-6 uppercase tracking-wider">
                             Built for consequential decisions
                         </h3>
@@ -399,8 +399,8 @@
                     © 2024 Sheikh Abdullah Aziz Bin Abdulla Al Mualla Legal Consultancy FZC LLC
                 </p>
                 <div class="flex gap-6">
-                    <a href="#" class="text-clamp-xs text-[#1a1a1a] dark:text-white/90 uppercase tracking-wider hover:text-orange-primary transition-colors duration-300">Privacy Policy</a>
-                    <a href="#" class="text-clamp-xs text-[#1a1a1a] dark:text-white/90 uppercase tracking-wider hover:text-orange-primary transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-clamp-xs text-[#1a1a1a] dark:text-white/90 uppercase tracking-wider hover:text-orange-primary hover:underline hover:scale-105 transition-all duration-300 inline-block">Privacy Policy</a>
+                    <a href="#" class="text-clamp-xs text-[#1a1a1a] dark:text-white/90 uppercase tracking-wider hover:text-orange-primary hover:underline hover:scale-105 transition-all duration-300 inline-block">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -431,7 +431,23 @@
                 if (preloader) {
                     preloader.style.transition = 'opacity 0.6s ease-in-out';
                     preloader.style.opacity = '0';
-                    setTimeout(() => preloader.style.display = 'none', 600);
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                        
+                        // Scroll to form on mobile devices
+                        const isMobile = window.innerWidth < 1024; // lg breakpoint
+                        if (isMobile) {
+                            const formElement = document.getElementById('contactForm');
+                            if (formElement) {
+                                setTimeout(() => {
+                                    formElement.scrollIntoView({ 
+                                        behavior: 'smooth', 
+                                        block: 'start' 
+                                    });
+                                }, 100);
+                            }
+                        }
+                    }, 600);
                 }
             }, 500);
         });
