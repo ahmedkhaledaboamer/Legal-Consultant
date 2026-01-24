@@ -1,68 +1,55 @@
-// Form submission handler
-document.getElementById('consultationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        decisionType: document.getElementById('decisionType').value,
-        signingImminent: document.querySelector('input[name="signingImminent"]:checked')?.value,
-        phoneNumber: document.getElementById('phoneNumber').value,
-        contactChannel: document.getElementById('contactChannel').value
-    };
-    
-    // Validate form
-    if (!formData.decisionType || !formData.signingImminent || !formData.phoneNumber || !formData.contactChannel) {
-        showMessage('Please fill in all required fields', 'error');
-        return;
-    }
-    
-    // Validate phone number format (basic validation)
-    const phoneRegex = /^\+?[0-9\s-]+$/;
-    if (!phoneRegex.test(formData.phoneNumber)) {
-        showMessage('Please enter a valid phone number', 'error');
-        return;
-    }
-    
-    // Here you would typically send the data to a server
-    // For now, we'll just show a success message
-    console.log('Form submitted:', formData);
-    
-    // Show success message
-    const submitBtn = document.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Submitted Successfully ✓';
-    submitBtn.style.backgroundColor = '#28a745';
-    submitBtn.disabled = true;
-    
-    // Show success notification
-    showMessage('Your request has been submitted successfully. We will contact you soon.', 'success');
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-        this.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.style.backgroundColor = '';
-        submitBtn.disabled = false;
-    }, 3000);
-    
-    // In a real application, you would send this data to your backend:
-    // fetch('/api/submit-consultation', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData)
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     console.log('Success:', data);
-    //     showMessage('Your request has been submitted successfully.', 'success');
-    // })
-    // .catch((error) => {
-    //     console.error('Error:', error);
-    //     showMessage('An error occurred. Please try again.', 'error');
-    // });
-});
+// Form submission handler - Only run if form exists
+const consultationForm = document.getElementById('consultationForm');
+if (consultationForm) {
+    consultationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+            decisionType: document.getElementById('decisionType')?.value,
+            signingImminent: document.querySelector('input[name="signingImminent"]:checked')?.value,
+            phoneNumber: document.getElementById('phoneNumber')?.value,
+            contactChannel: document.getElementById('contactChannel')?.value
+        };
+        
+        // Validate form
+        if (!formData.decisionType || !formData.signingImminent || !formData.phoneNumber || !formData.contactChannel) {
+            showMessage('Please fill in all required fields', 'error');
+            return;
+        }
+        
+        // Validate phone number format (basic validation)
+        const phoneRegex = /^\+?[0-9\s-]+$/;
+        if (!phoneRegex.test(formData.phoneNumber)) {
+            showMessage('Please enter a valid phone number', 'error');
+            return;
+        }
+        
+        // Here you would typically send the data to a server
+        // For now, we'll just show a success message
+        console.log('Form submitted:', formData);
+        
+        // Show success message
+        const submitBtn = document.querySelector('.submit-btn');
+        if (submitBtn) {
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitted Successfully ✓';
+            submitBtn.style.backgroundColor = '#28a745';
+            submitBtn.disabled = true;
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.style.backgroundColor = '';
+                submitBtn.disabled = false;
+            }, 3000);
+        }
+        
+        // Show success notification
+        showMessage('Your request has been submitted successfully. We will contact you soon.', 'success');
+    });
+}
 
 // Show notification message
 function showMessage(message, type) {
