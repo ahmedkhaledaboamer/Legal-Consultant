@@ -44,25 +44,7 @@
     </script>
     <!-- End X conversion tracking base code -->
     
-    <!-- Twitter conversion tracking event code -->
-    <script type="text/javascript">
-      // Insert Twitter Event ID
-      twq('event', 'tw-r283s-r2grr', {
-        email_address: null, // use this to pass a user's email address
-        phone_number: null // phone number in E164 standard
-      });
-    </script>
-    <!-- End Twitter conversion tracking event code -->
     
-    <!-- Twitter conversion tracking event code -->
-    <script type="text/javascript">
-      // Insert Twitter Event ID
-      twq('event', 'tw-r283s-r2gqt', {
-        email_address: null, // use this to pass a user's email address
-        phone_number: null // phone number in E164 standard
-      });
-    </script>
-    <!-- End Twitter conversion tracking event code -->
     
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -780,6 +762,14 @@
                     // Success
                     btn.textContent = '✓ Submitted Successfully';
                     btn.style.background = '#28a745';
+                    
+                    // Twitter conversion tracking event
+                    if (typeof twq !== 'undefined') {
+                        twq('event', 'Lead', {
+                            content_name: 'Consultation Landing Page - English',
+                            content_type: 'lead_form'
+                        });
+                    }
                     
                     // Reset form after 2 seconds
                     setTimeout(() => {
