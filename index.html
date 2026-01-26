@@ -75,8 +75,93 @@
         
         @media (min-width: 1366px) and (max-width: 1367px) {
             .top-section-images > div {
-                height: 50vh !important;
-                max-height: 50vh !important;
+                height: 40vh !important;
+                max-height: 40vh !important;
+            }
+            
+            /* Make top section fit viewport */
+            .top-section-container {
+                min-height: calc(100vh - 2rem);
+                max-height: calc(100vh - 2rem);
+                overflow: hidden;
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+            }
+            
+            .top-section-container > div {
+                height: 100%;
+            }
+            
+            .top-section-container .grid {
+                height: 100%;
+                align-items: stretch;
+            }
+        }
+
+        /* Reduce font sizes at 1366px */
+        @media (min-width: 1366px) and (max-width: 1367px) {
+            .text-clamp-xs { font-size: clamp(0.5rem, 0.35rem + 0.3vw, 0.65rem); }
+            .text-clamp-sm { font-size: clamp(0.625rem, 0.45rem + 0.3vw, 0.75rem); }
+            .text-clamp-base { font-size: clamp(0.75rem, 0.55rem + 0.3vw, 0.85rem); }
+            .text-clamp-lg { font-size: clamp(0.875rem, 0.65rem + 0.3vw, 0.95rem); }
+            .text-clamp-xl { font-size: clamp(1rem, 0.75rem + 0.4vw, 1.2rem); }
+            .text-clamp-2xl { font-size: clamp(1.125rem, 0.85rem + 0.5vw, 1.5rem); }
+            .text-clamp-3xl { font-size: clamp(1.25rem, 1rem + 0.6vw, 1.75rem); }
+            .text-clamp-4xl { font-size: clamp(1.5rem, 1.2rem + 0.8vw, 2.25rem); }
+            .text-clamp-5xl { font-size: clamp(1.875rem, 1.5rem + 1vw, 2.75rem); }
+            .text-clamp-6xl { font-size: clamp(2.25rem, 1.75rem + 1.2vw, 3.5rem); }
+            .text-clamp-hero { font-size: clamp(1rem, 0.8rem + 0.5vw, 1.5rem); }
+            
+            /* Scale form to fit viewport without scroll */
+            #contactForm {
+                max-height: calc(100vh - 6rem);
+                overflow: hidden;
+                transform-origin: top center;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            #legalForm {
+                transform: scale(0.9);
+                transform-origin: top center;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem !important;
+            }
+            
+            /* Adjust form container spacing */
+            #contactForm h2 {
+                font-size: clamp(1rem, 0.8rem + 0.5vw, 1.5rem) !important;
+                margin-bottom: 0.25rem !important;
+            }
+            
+            #contactForm p {
+                font-size: clamp(0.6rem, 0.5rem + 0.3vw, 0.8rem) !important;
+                margin-bottom: 0.75rem !important;
+            }
+            
+            #contactForm label {
+                font-size: clamp(0.6rem, 0.5rem + 0.3vw, 0.8rem) !important;
+                margin-bottom: 0.25rem !important;
+            }
+            
+            #contactForm input,
+            #contactForm select,
+            #contactForm textarea {
+                font-size: clamp(0.7rem, 0.6rem + 0.3vw, 0.9rem) !important;
+                padding: 0.5rem 0.75rem !important;
+            }
+            
+            #contactForm button {
+                font-size: clamp(0.7rem, 0.6rem + 0.3vw, 0.9rem) !important;
+                padding: 0.5rem !important;
+            }
+            
+            /* Reduce spacing in form wrapper */
+            .top-section-container .space-y-6 > div:last-child {
+                max-height: calc(100vh - 8rem);
+                overflow: hidden;
             }
         }
 
@@ -142,19 +227,19 @@
     </button>
 
     <!-- Top Section: Text Left + Form Right -->
-    <section class="py-8 lg:py-8 xl:px-[10%] bg-white dark:bg-black w-full  ">
+    <section class="py-8 lg:py-8 2xl:px-[10%] bg-white dark:bg-black w-full top-section-container">
         <div class="w-full px-6 lg:px-12 ">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-32 items-start">
                 <!-- Left: Main Heading and Introduction -->
                 <div class="space-y-6">
-                    <h1 class="text-clamp-2xl xl:text-5xl  font-bold leading-tight text-brown-primary dark:text-white">
+                    <h1 class="text-clamp-xl 2xl:text-5xl  font-bold leading-tight text-brown-primary dark:text-white">
                         Before you sign, ask one question:
                         <span class="text-orange-primary">Can this decision be reversed under UAE law?</span>.
                     </h1>
                     
                     <div class="flex items-start gap-3">
                         <div class="w-1 h-16 bg-orange-primary mt-1"></div>
-                        <p class="text-clamp-base xl:text-2xl  text-[#555] dark:text-[#aaa] font-medium leading-relaxed">
+                        <p class="text-clamp-base 2xl:text-2xl  text-[#555] dark:text-[#aaa] font-medium leading-relaxed">
                             One wrong clause can stop everything. Decision review for sensitive agreements, high-stakes partnerships, and consequential commitments.
                         </p>
                     </div>
@@ -163,7 +248,7 @@
                     
                     <!-- Images -->
                     <div class="  top-section-images">
-                        <div class="rounded-lg h-[200px] sm:h-[250px] lg:h-[300px] xl:h-[550px] overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                        <div class="rounded-lg h-[200px] sm:h-[250px] lg:h-[300px] 2xl:h-[550px] overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group">
                             <img src="./images/S4.webp" alt="Office meeting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                         </div>
                          
@@ -175,27 +260,27 @@
                 <!-- Right: Form -->
                 <div class="space-y-6">
                   <div  id="contactForm" class="bg-[#f5f5f5] dark:bg-[#0a0a0a] rounded-xl p-5 lg:p-6 border-2 border-orange-primary/30 dark:border-orange-primary/20 hover:border-orange-primary/50 dark:hover:border-orange-primary/40 hover:shadow-xl transition-all duration-300">
-                    <h2 class="text-clamp-lg xl:text-4xl  font-bold text-[#1a1a1a] dark:text-white mb-0.5">
+                    <h2 class="text-clamp-lg 2xl:text-5xl  font-bold text-[#1a1a1a] dark:text-white mb-3">
                         Request a <span class="text-orange-primary">Confidential Review</span>
                     </h2>
-                    <p class="text-[9px] xl:text-2xl  text-[#666] dark:text-[#aaa] mb-3">
+                    <p class="text-[9px] 2xl:text-2xl  text-[#666] dark:text-[#aaa] mb-3">
                         For serious files only. If your decision is significant, submit the details below.
                     </p>
                     
-                    <form id="legalForm" class="space-y-3 xl:space-y-8">
+                    <form id="legalForm" class="space-y-3 2xl:space-y-12">
                         <div>
-                            <label class="block text-[9px] xl:text-lg  font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
+                            <label class="block text-[9px] 2xl:text-lg  font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
                                 Name <span class="text-orange-primary">*</span>
                             </label>
-                            <input type="text" placeholder="Enter your full name" required class="w-full px-2.5 py-1.5 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs xl:text-xl  text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary placeholder:text-[#999] dark:placeholder:text-[#666]">
+                            <input type="text" placeholder="Enter your full name" required class="w-full px-2.5 py-1.5 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs 2xl:text-xl  text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary placeholder:text-[#999] dark:placeholder:text-[#666]">
                         </div>
 
                         <div>
-                            <label class="block text-[9px] xl:text-lg  font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
+                            <label class="block text-[9px] 2xl:text-lg  font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
                                 What type of legal decision are you about to finalize? <span class="text-orange-primary">*</span>
                             </label>
                             <div class="relative">
-                                <select required class="w-full xl:text-lg  px-2.5 py-1.5 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary appearance-none cursor-pointer">
+                                <select required class="w-full 2xl:text-lg  px-2.5 py-1.5 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary appearance-none cursor-pointer">
                                     <option value="">Select decision type</option>
                                     <option value="dispute">Company formation / restructuring</option>
                                     <option value="contract">Shareholder or partner agreement</option>
@@ -209,18 +294,18 @@
                         </div>
 
                         <div>
-                            <label class="block text-[9px] xl:text-lg font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
-                                Case Details <span class="text-[#999] dark:text-[#666] text-[8px] xl:text-md">(Optional)</span>
+                            <label class="block text-[9px] 2xl:text-lg font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
+                                Case Details <span class="text-[#999] dark:text-[#666] text-[8px] 2xl:text-md">(Optional)</span>
                             </label>
-                            <textarea placeholder="Provide additional details about your case..." rows="2" class="w-full px-2.5 py-1.5 bg-white dark:bg-[#1a1a1a] xl:text-lg border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary placeholder:text-[#999] dark:placeholder:text-[#666] resize-none"></textarea>
+                            <textarea placeholder="Provide additional details about your case..." rows="2" class="w-full px-2.5 py-1.5 bg-white dark:bg-[#1a1a1a] 2xl:text-lg border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary placeholder:text-[#999] dark:placeholder:text-[#666] resize-none"></textarea>
                         </div>
 
                         <div>
-                            <label class="block text-[9px] xl:text-lg font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
+                            <label class="block text-[9px] 2xl:text-lg font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
                                 How would you like to be contacted for this confidential review? <span class="text-orange-primary">*</span>
                             </label>
                             <div class="relative">
-                                <select id="contactChannel" required class="w-full px-2.5  xl:text-lg py-1.5 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary appearance-none cursor-pointer">
+                                <select id="contactChannel" required class="w-full px-2.5  2xl:text-lg py-1.5 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary appearance-none cursor-pointer">
                                     <option value="">Select contact channel</option>
                                     <option value="whatsapp">WhatsApp</option>
                                     <option value="phone">Phone Call</option>
@@ -232,7 +317,7 @@
 
                         <!-- Phone Number Field (shown when WhatsApp is selected) -->
                         <div id="phoneField" class="hidden">
-                            <label class="block text-[9px] font-bold xl:text-xl text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
+                            <label class="block text-[9px] font-bold 2xl:text-xl text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
                                 Phone Number <span class="text-orange-primary">*</span>
                             </label>
                             <input type="tel" id="phoneInput" placeholder="+971 XX XXX XXXX" class="w-full px-2.5 py-1.5 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary placeholder:text-[#999] dark:placeholder:text-[#666]">
@@ -240,13 +325,13 @@
 
                         <!-- Email Field (shown when Email is selected) -->
                         <div id="emailField" class="hidden">
-                            <label class="block text-[9px] xl:text-xl font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
+                            <label class="block text-[9px] 2xl:text-xl font-bold text-[#666] dark:text-[#aaa] uppercase tracking-wider mb-1">
                                 Email Address <span class="text-orange-primary">*</span>
                             </label>
                             <input type="email" id="emailInput" placeholder="your.email@example.com" class="w-full px-2.5 py-1.5 bg-white dark:bg-[#1a1a1a] border border-[#e0e0e0] dark:border-[#333] rounded-lg text-xs text-[#1a1a1a] dark:text-white focus:outline-none focus:border-orange-primary placeholder:text-[#999] dark:placeholder:text-[#666]">
                         </div>
 
-                        <button type="submit" class="w-full xl:text-xl py-2 bg-orange-primary text-white rounded-lg font-bold text-xs hover:bg-orange-dark hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 uppercase tracking-wider">
+                        <button type="submit" class="w-full 2l:text-xl py-2 bg-orange-primary text-white rounded-lg font-bold text-xs hover:bg-orange-dark hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 uppercase tracking-wider">
                             Request Expert Consultation
                         </button>
                     </form>
@@ -254,13 +339,13 @@
                      <!-- Tags -->
                      <div class="flex flex-wrap items-center justify-center gap-3">
                         <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded hover:bg-orange-primary/20 dark:hover:bg-orange-primary/30 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer">
-                            <span class="text-orange-primary font-semibold text-clamp-sm">Signing is close</span>
+                            <span class="text-orange-primary font-semibold 2xl:text-2xl text-clamp-sm">Signing is close</span>
                         </div>
                         <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded hover:bg-orange-primary/20 dark:hover:bg-orange-primary/30 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer">
-                            <span class="text-orange-primary font-semibold text-clamp-sm">Material value</span>
+                            <span class="text-orange-primary font-semibold 2xl:text-2xl text-clamp-sm">Material value</span>
                         </div>
                         <div class="bg-orange-primary/10 dark:bg-orange-primary/20 px-4 py-2 rounded hover:bg-orange-primary/20 dark:hover:bg-orange-primary/30 hover:scale-105 hover:shadow-md transition-all duration-300 cursor-pointer">
-                            <span class="text-orange-primary font-semibold text-clamp-sm">Reputation at risk</span>
+                            <span class="text-orange-primary font-semibold 2xl:text-2xl text-clamp-sm">Reputation at risk</span>
                         </div>
                     </div>
                 </div>
@@ -269,7 +354,7 @@
     </section>
 
     <!-- Services Section: Three Cards -->
-    <section class="py-8 lg:py-8 xl:px-[10%] bg-white dark:bg-black w-full">
+    <section class="py-8 lg:py-8 2xl:px-[10%] bg-white dark:bg-black w-full">
         <div class="w-full px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1: Expert Consultation -->
@@ -309,7 +394,7 @@
     </section>
 
     <!-- Lower Section: Text Left + Image Right -->
-    <section class="py-8 lg:py-8 xl:px-[10%] bg-white dark:bg-black w-full">
+    <section class="py-8 lg:py-8 2xl:px-[10%] bg-white dark:bg-black w-full">
         <div class="w-full px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                 <!-- Left: Content Text -->
@@ -417,7 +502,7 @@
         </div>
     </section>
     <!-- VIP Legal Protection Program Section -->
-    <section class="py-8 lg:py-8 xl:px-[10%] bg-white dark:bg-black w-full">
+    <section class="py-8 lg:py-8 2xl:px-[10%] bg-white dark:bg-black w-full">
         <div class="w-full px-6 lg:px-12  ">
             <div class="bg-gradient-to-br from-[#1e293b] to-[#0f172a] dark:from-[#0a0a0a] dark:to-[#000] rounded-3xl p-6 lg:p-8 overflow-hidden border border-[#334155] dark:border-[#1a1a1a] shadow-2xl hover:shadow-orange-primary/20 transition-all duration-300">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -628,23 +713,72 @@
         });
 
         // Form submission
-        document.getElementById('legalForm').addEventListener('submit', function(e) {
+        document.getElementById('legalForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const btn = this.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
+            const originalBg = btn.style.background;
             
+            // Disable button and show processing state
+            btn.disabled = true;
             btn.textContent = 'Processing...';
             btn.style.background = '#48bb78';
             
-            setTimeout(() => {
-                btn.textContent = '✓ Submitted Successfully';
+            // Collect form data
+            const formData = {
+                name: this.querySelector('input[type="text"]').value,
+                decisionType: this.querySelector('select').value,
+                caseDetails: this.querySelector('textarea').value || '',
+                contactChannel: document.getElementById('contactChannel').value,
+                phoneNumber: document.getElementById('phoneInput')?.value || '',
+                email: document.getElementById('emailInput')?.value || ''
+            };
+            
+            try {
+                // Send data to webhook
+                const response = await fetch('https://shazmlc.cloud/webhook/website-form', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    // Success
+                    btn.textContent = '✓ Submitted Successfully';
+                    btn.style.background = '#28a745';
+                    
+                    // Reset form after 2 seconds
+                    setTimeout(() => {
+                        this.reset();
+                        // Hide phone/email fields
+                        phoneField.classList.add('hidden');
+                        emailField.classList.add('hidden');
+                        phoneInput.removeAttribute('required');
+                        emailInput.removeAttribute('required');
+                        
+                        btn.textContent = originalText;
+                        btn.style.background = originalBg;
+                        btn.disabled = false;
+                    }, 2000);
+                } else {
+                    // Error response
+                    throw new Error('Failed to submit form');
+                }
+            } catch (error) {
+                // Handle error
+                console.error('Error submitting form:', error);
+                btn.textContent = '✗ Error - Try Again';
+                btn.style.background = '#dc3545';
+                
                 setTimeout(() => {
                     btn.textContent = originalText;
-                    btn.style.background = '';
-                    this.reset();
-                }, 2000);
-            }, 1500);
+                    btn.style.background = originalBg;
+                    btn.disabled = false;
+                }, 3000);
+            }
         });
 
         // Testimonials Slider
