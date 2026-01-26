@@ -18,7 +18,7 @@ module.exports = {
         'brown': {
           'primary': '#000',
           'dark': '#654321',
-          'light': '#a0522d',
+          'light': '#1a2437',
         },
       },
       fontFamily: {
