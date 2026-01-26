@@ -764,11 +764,9 @@
                     btn.style.background = '#28a745';
                     
                     // Twitter conversion tracking event
-                    if (typeof twq !== 'undefined') {
-                        twq('event', 'Lead', {
-                            content_name: 'Consultation Landing Page - English'
-                        });
-                    }
+                    twq('event', 'Lead', {
+                        content_name: 'Consultation Landing Page - English'
+                    });
                     
                     // Reset form after 2 seconds
                     setTimeout(() => {
