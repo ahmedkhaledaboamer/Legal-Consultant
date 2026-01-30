@@ -751,13 +751,19 @@
             btn.style.background = '#48bb78';
             
             // Collect form data
+            const contactChannelValue = document.getElementById('contactChannel').value;
+            const phoneVal = document.getElementById('phoneInput')?.value || '';
             const formData = {
                 name: this.querySelector('input[type="text"]').value,
                 decisionType: this.querySelector('select').value,
                 caseDetails: this.querySelector('textarea').value || '',
-                contactChannel: document.getElementById('contactChannel').value,
-                phoneNumber: document.getElementById('phoneInput')?.value || '',
-                email: document.getElementById('emailInput')?.value || ''
+                contactChannel: contactChannelValue,
+                phoneNumber: phoneVal,
+                // send WhatsApp number specifically in `whatsupnumber` when WhatsApp selected
+                whatsupnumber: contactChannelValue === 'whatsapp' ? phoneVal : '',
+                email: document.getElementById('emailInput')?.value || '',
+                // Add language field
+                language: 'english'
             };
             
             try {
