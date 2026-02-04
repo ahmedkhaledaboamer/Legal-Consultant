@@ -85,8 +85,25 @@
             }
         }
 
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .priority-notice {
+            border: 2px solid #28a745;
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: inline-block;
+        }
+
         .container {
-            max-width: 560px;
+            max-width: 600px;
             width: 100%;
             position: relative;
             z-index: 1;
@@ -351,18 +368,19 @@
             
 
             <h1>Thank you!</h1>
-            <p class="subtitle">Your request has been received successfully.</p>
+            <p class="subtitle">Your request has been successfully received.</p>
 
             <div class="divider"></div>
+            <p class="priority-notice">Our executive legal team will review your inquiry with priority</p>
 
-            <p class="question">Would you like to visit our website now?</p>
+            <p class="question">Would you like to explore our premium legal services now?</p>
 
             <div class="button-group">
                 <a href="https://shazmlc.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
                     </svg>
-                    <span>Visit Website</span>
+                    <span>Visit Our Website</span>
                 </a>
                 <a href="index.html" class="btn btn-secondary">
                     <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
