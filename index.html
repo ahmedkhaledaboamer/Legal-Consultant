@@ -831,19 +831,10 @@
                     // Twitter conversion tracking event
                     twq('event', 'Lead');
                     
-                    // Reset form after 2 seconds
+                    // Redirect to thank you page after 1 second
                     setTimeout(() => {
-                        this.reset();
-                        // Hide phone/email fields
-                        phoneField.classList.add('hidden');
-                        emailField.classList.add('hidden');
-                        phoneInput.removeAttribute('required');
-                        emailInput.removeAttribute('required');
-                        
-                        btn.textContent = originalText;
-                        btn.style.background = originalBg;
-                        btn.disabled = false;
-                    }, 2000);
+                        window.location.href = 'thankyou.html';
+                    }, 1000);
                 } else {
                     // Error response
                     throw new Error('Failed to submit form');
